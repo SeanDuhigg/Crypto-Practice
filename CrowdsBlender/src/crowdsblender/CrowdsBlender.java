@@ -21,14 +21,11 @@ public class CrowdsBlender {
     public static void main(String[] args) {
         
         
-        int portNumber;
+        int portNumber = 8800;
         Socket myClientSocket;
         ServerSocket myServerSocket;
         
-        System.out.print("Enter the socket of this Server: ");
-        Scanner scanner = new Scanner(System.in);
-        portNumber = scanner.nextInt();    
-        
+        System.out.print("This server is listening on port 8800");
         
         try{
     
@@ -45,7 +42,7 @@ public class CrowdsBlender {
             String message = br.readLine();
             
             System.out.println("Message created from client "+ message);
-            scanner = new Scanner(System.in);
+            //scanner = new Scanner(System.in);
         }
         catch(Exception e){
             System.out.println(e);
