@@ -6,6 +6,9 @@ import java.io.*;
  *
  * @author Homework
  */
+//This program just acts as a destination for a crowds message. 
+//It will wait on port 55005 and give you the output of the message sent
+//and send back a confirmation message
 public class FinalDestination {
 
     /**
@@ -28,9 +31,10 @@ public class FinalDestination {
             
 
                 // Get the message from the sender
-                String message = br.readLine();
-       
-                System.out.println(message);
+                String message = br.readLine();       
+                System.out.println("Anonymous message: "+message);
+                
+               
                 
                 OutputStream os = socket.getOutputStream();
                 OutputStreamWriter osw = new OutputStreamWriter(os);
@@ -39,7 +43,7 @@ public class FinalDestination {
                 System.out.println("Message confirmed to sender");
                 pw.flush();
                 pw.close();
-                //socket.close();
+                socket.close();
             }
            
         }catch(Exception e){e.printStackTrace();}
